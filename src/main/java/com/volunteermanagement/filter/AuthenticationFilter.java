@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.util.Set;
 
 /**
  * Authentication filter ensuring users are logged in for protected resources.
@@ -16,12 +15,6 @@ import java.util.Set;
  */
 public class AuthenticationFilter implements Filter {
     private static final Logger logger = LoggerFactory.getLogger(AuthenticationFilter.class);
-    private static final Set<String> EXCLUDED_PATHS = Set.of(
-        "/auth/login",
-        "/auth/register",
-        "/",
-        "/index.jsp"
-    );
 
     @Override
     public void init(FilterConfig filterConfig) {
@@ -41,13 +34,7 @@ public class AuthenticationFilter implements Filter {
         
         logger.debug("Authentication check for: {}", fullPath);
         
-        // Allow excluded paths
-        if (isExcludedPath(fullPath)) {
-            chain.doFilter(request, response);
-            return;
-        }
-        
-        // Check session
+        // Check session (this filter only runs on protected paths per web.xml)
         HttpSession session = req.getSession(false);
         boolean isAuthenticated = session != null && session.getAttribute("userId") != null;
         
@@ -59,10 +46,6 @@ public class AuthenticationFilter implements Filter {
             String contextPath = req.getContextPath();
             resp.sendRedirect(contextPath + "/auth/login");
         }
-    }
-
-    private boolean isExcludedPath(String path) {
-        return EXCLUDED_PATHS.stream().anyMatch(path::startsWith);
     }
 
     @Override

@@ -1,5 +1,6 @@
 C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\servlet\RegistrationServlet.java
 C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\filter\CharacterEncodingFilter.java
+C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\dao\VolunteerDAO.java
 C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\filter\AuthorizationFilter.java
 C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\util\PasswordUtil.java
 C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\servlet\AuthServlet.java
@@ -11,4 +12,8 @@ C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\
 C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\model\EventRegistration.java
 C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\model\User.java
 C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\servlet\EventServlet.java
+C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\dao\EventDAO.java
+C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\dao\EventRegistrationDAO.java
+C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\listener\AppContextListener.java
 C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\model\Volunteer.java
+C:\xampp\htdocs\COMP2140_Software_Project\src\main\java\com\volunteermanagement\dao\UserDAO.java

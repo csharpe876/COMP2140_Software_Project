@@ -33,9 +33,8 @@ public class CharacterEncodingFilter implements Filter {
             request.setCharacterEncoding(encoding);
         }
         
-        // Always set response encoding
+        // Set response encoding (but not content type - let servlets decide)
         response.setCharacterEncoding(encoding);
-        response.setContentType("text/html; charset=" + encoding);
         
         chain.doFilter(request, response);
     }

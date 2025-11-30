@@ -48,48 +48,11 @@ public class EventServlet extends HttpServlet {
         }
     }
 
-    private void listEvents(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.setContentType("text/html;charset=UTF-8");
-        String contextPath = req.getContextPath();
+    private void listEvents(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        var eventDAO = new com.volunteermanagement.dao.EventDAO();
+        var events = eventDAO.findActiveEvents();
         
-        resp.getWriter().write("""
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Events - Volunteer Management</title>
-                <style>
-                    body { font-family: system-ui, Arial, sans-serif; max-width: 1000px; margin: 20px auto; padding: 20px; }
-                    .event-card { border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px; }
-                    .event-card h3 { margin-top: 0; }
-                    a { color: #0366d6; text-decoration: none; }
-                    a:hover { text-decoration: underline; }
-                </style>
-            </head>
-            <body>
-                <h2>Volunteer Events</h2>
-                <p><a href="%s/">← Back to Home</a></p>
-                
-                <div class="event-card">
-                    <h3>Sample Event 1</h3>
-                    <p><strong>Date:</strong> Coming Soon</p>
-                    <p><strong>Location:</strong> TBD</p>
-                    <p><strong>Description:</strong> Event management functionality will be implemented with database integration.</p>
-                    <p><strong>Spots:</strong> TBD</p>
-                </div>
-                
-                <div class="event-card">
-                    <h3>Sample Event 2</h3>
-                    <p><strong>Date:</strong> Coming Soon</p>
-                    <p><strong>Location:</strong> TBD</p>
-                    <p><strong>Description:</strong> Full CRUD operations for events coming soon.</p>
-                    <p><strong>Spots:</strong> TBD</p>
-                </div>
-                
-                <p><em>TODO: Connect to database to display real events</em></p>
-            </body>
-            </html>
-            """.formatted(contextPath));
+        req.setAttribute("events", events);
+        req.getRequestDispatcher("/WEB-INF/views/events/list.jsp").forward(req, resp);
     }
 }
