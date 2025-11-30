@@ -24,4 +24,4 @@
     <p>If you reached this page while testing locally, ensure your server context path is correct. For Jetty run-war, use context path `/volunteer-management` or access the app at the root if deployed as ROOT.</p>
     <p><small>Build: 1.0-SNAPSHOT</small></p>
 </body>
-\</html>
+</html>

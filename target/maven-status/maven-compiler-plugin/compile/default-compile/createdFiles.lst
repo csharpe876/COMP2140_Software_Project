@@ -1,7 +1,14 @@
-com\volunteermanagement\model\EventRegistration.class
+com\volunteermanagement\filter\AuthorizationFilter.class
+com\volunteermanagement\servlet\VolunteerServlet.class
 com\volunteermanagement\model\Event.class
-com\volunteermanagement\util\DatabaseUtil.class
 com\volunteermanagement\util\ValidationUtil.class
-com\volunteermanagement\model\User.class
+com\volunteermanagement\filter\CharacterEncodingFilter.class
+com\volunteermanagement\filter\AuthenticationFilter.class
+com\volunteermanagement\servlet\AuthServlet.class
 com\volunteermanagement\util\PasswordUtil.class
 com\volunteermanagement\model\Volunteer.class
+com\volunteermanagement\servlet\EventServlet.class
+com\volunteermanagement\model\EventRegistration.class
+com\volunteermanagement\util\DatabaseUtil.class
+com\volunteermanagement\servlet\RegistrationServlet.class
+com\volunteermanagement\model\User.class
