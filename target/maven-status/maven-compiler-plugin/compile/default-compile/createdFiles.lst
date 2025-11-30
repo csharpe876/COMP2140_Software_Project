@@ -1,0 +1,7 @@
+com\volunteermanagement\model\EventRegistration.class
+com\volunteermanagement\model\Event.class
+com\volunteermanagement\util\DatabaseUtil.class
+com\volunteermanagement\util\ValidationUtil.class
+com\volunteermanagement\model\User.class
+com\volunteermanagement\util\PasswordUtil.class
+com\volunteermanagement\model\Volunteer.class
